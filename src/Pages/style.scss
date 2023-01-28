@@ -1,0 +1,176 @@
+@mixin laptop {
+    @media screen and (max-width : 800px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+}
+@mixin mobile {
+    @media screen and (max-width : 468px) {
+        @content;
+    }
+}
+
+
+.Navbar--container{
+    display: flex;   
+    
+}
+.Navbar{
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+    background-color: #1c1831;
+    padding-top: 30px;
+    width: 100%;
+    flex-direction: row-reverse;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    @include tablet{
+        box-shadow: none;
+    }
+        button{
+            background-color:#1c1831;
+            border: none;
+
+            .link{
+                color: white;
+                text-decoration: inherit;
+                font-family: karla;
+                font-size: 16px;
+                @include tablet{
+                    display: none;
+                }
+            }
+        }
+        .collapsible{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        }
+        .collapsible .content {
+            padding: 6px;
+            background-color: #1c1831;
+
+            ol{
+                width: 150px;
+                background-color: #1c1831;
+                
+                li{
+                   list-style: none;
+                   padding: 20px;
+                   color: white;
+
+                   .link{
+                    color: white;
+                    text-decoration: white;
+                   }
+                }
+            }
+            
+        }
+        .collapsible .header {
+            
+            padding: 6px;
+            cursor: pointer;
+            
+            button{
+                float: right;
+            }
+        }
+    
+}
+
+
+body{
+    background-color: #1c1831;
+}
+.homepage{
+    display: flex;
+    height: 100vh;
+    
+    .container{
+        display: flex;
+        width: 100%;
+        
+       
+        .sidebar{
+            flex: 0.2;
+            width: 100%;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+            @include tablet{
+                display: none;
+            } 
+
+            .sideprofile--container{
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
+                flex-direction: column;
+
+                .profile{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                   .profile-image{
+                    width: 70px;
+                    height: 70px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    
+                } 
+
+                pre{
+                    color: #64ffda;
+                    font-family: karla;
+                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            .icons{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                padding-top: 60px;
+                flex-direction: column;
+
+                .icon:hover{
+                    size: 50px;
+                }
+                
+
+            }
+                
+            }
+   
+        }
+        .main--page{
+            
+            width: 100%; 
+            position: relative;
+
+            .footer{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                position: absolute;
+                bottom: 0;
+                 
+             
+                .footer-content{
+                    display: flex;
+                    gap: 30px;   
+                    @include laptop{
+                        display: none;
+                    } 
+                }
+            }
+            
+        }
+    
+    }
+}
