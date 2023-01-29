@@ -27,21 +27,47 @@
     padding-top: 30px;
     width: 100%;
     flex-direction: row-reverse;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    @include tablet{
-        box-shadow: none;
-    }
+    box-shadow: 0px 3px 5px rgba(158, 153, 153, 0.1);
+   
         button{
             background-color:#1c1831;
             border: none;
 
+            .link-button{
+                border: 1px solid white;
+                text-decoration: inherit;
+                color:#64ffda;
+                border-radius: 4px;
+                padding: 8px;
+                background-color:#1c1831;
+                font-family: --font-mono;
+                font-size: 15px;
+
+                &:hover{
+                    background-color:#3f4140 ;
+                }
+
+                @include tablet{
+                    display: none;
+                }
+                
+            }
+
             .link{
                 color: white;
                 text-decoration: inherit;
-                font-family: karla;
-                font-size: 16px;
+                
+                font-size: 13px;
                 @include tablet{
                     display: none;
+                }
+
+                &:hover{
+                    color:#64ffda;
+                }
+                .number{
+                    color:#64ffda;
+                    font-size: 12px;
                 }
             }
         }
@@ -50,6 +76,10 @@
             @include tablet{
                 display: block;
             }
+            position: absolute;
+            z-index: 1;
+            overflow: hidden;
+            
         }
         .collapsible .content {
             padding: 6px;
@@ -67,6 +97,16 @@
                    .link{
                     color: white;
                     text-decoration: white;
+
+                    .number{
+                        color:#64ffda;
+                        font-size: 12px;
+                    }
+                    &:hover{
+                        color:#64ffda;
+
+                        
+                    }
                    }
                 }
             }
@@ -116,6 +156,15 @@ body{
                     align-items: center;
                     flex-direction: column;
 
+                    .rotate{
+                        animation: rotate 1s;
+
+                        @keyframes rotate {
+                            from {transform: rotate(0deg);}
+                            to {transform: rotate(360deg);}
+                        }
+                    }
+
                    .profile-image{
                     width: 70px;
                     height: 70px;
@@ -138,9 +187,23 @@ body{
                 padding-top: 60px;
                 flex-direction: column;
 
-                .icon:hover{
-                    size: 50px;
-                }
+                .icon:hover {
+                    animation: shake 1s;
+                  }
+                  
+                  @keyframes shake {
+                    0% { transform: translate(1px, 1px) rotate(0deg); }
+                    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                    20% { transform: translate(-3px, 0px) rotate(1deg); }
+                    30% { transform: translate(3px, 2px) rotate(0deg); }
+                    40% { transform: translate(1px, -1px) rotate(1deg); }
+                    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                    60% { transform: translate(-3px, 1px) rotate(0deg); }
+                    70% { transform: translate(3px, 1px) rotate(-1deg); }
+                    80% { transform: translate(-1px, -1px) rotate(1deg); }
+                    90% { transform: translate(1px, 2px) rotate(0deg); }
+                    100% { transform: translate(1px, -2px) rotate(-1deg); }
+                  }
                 
 
             }
