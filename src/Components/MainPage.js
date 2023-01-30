@@ -11,6 +11,7 @@ import Resume from "../Components/Resume"
 
 
 const Mainpage= () =>{
+    
     return(
         <div className="main--page">
           <Navbar/>

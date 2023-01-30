@@ -9,25 +9,26 @@
     }
 }
 @mixin mobile {
-    @media screen and (max-width : 468px) {
+    @media screen and (max-width : 600px) {
         @content;
     }
 }
 
 
 .Navbar--container{
-    display: flex;   
+    padding: 20px;
     
 }
 .Navbar{
     display: flex;
     padding: 10px;
     gap: 20px;
-    background-color: #1c1831;
+    background-color: #0a192f;
     padding-top: 30px;
     width: 100%;
     flex-direction: row-reverse;
     box-shadow: 0px 3px 5px rgba(158, 153, 153, 0.1);
+    
    
         button{
             background-color:#1c1831;
@@ -45,6 +46,7 @@
 
                 &:hover{
                     background-color:#3f4140 ;
+                    font-size: 16px;
                 }
 
                 @include tablet{
@@ -56,8 +58,11 @@
             .link{
                 color: white;
                 text-decoration: inherit;
-                
                 font-size: 13px;
+
+                &:hover{
+                    font-size: 14px;
+                }
                 @include tablet{
                     display: none;
                 }
@@ -83,11 +88,11 @@
         }
         .collapsible .content {
             padding: 6px;
-            background-color: #1c1831;
+            background-color:  #0a192f;
 
             ol{
                 width: 150px;
-                background-color: #1c1831;
+                background-color:  #0a192f;
                 
                 li{
                    list-style: none;
@@ -104,7 +109,6 @@
                     }
                     &:hover{
                         color:#64ffda;
-
                         
                     }
                    }
@@ -126,8 +130,160 @@
 
 
 body{
-    background-color: #1c1831;
+    background-color: #0a192f;
 }
+.my--profile{
+    display: flex;
+
+    .my--profile--content{
+        padding: 50px;
+        
+
+        .p1{
+            color:#64ffda ;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .p2{
+            color: whitesmoke;
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 600;
+            line-height: 1;
+        }
+        .p3{
+            color: #ccd6f6;
+            font-family:'Courier New', Courier, monospace;
+
+            .p4{
+                font-size: 3em;
+                line-height: 1.1;
+                font-weight: 700;
+                
+
+                .p5{
+                    color:#64ffda ;
+                }
+            }
+
+        }
+
+    }
+}
+.projects--heading{
+    display: flex;
+    justify-content: center;
+
+    .projects--paragraph{
+        color: white;
+        font-size: 24px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: 600;
+        &:hover{
+            color: #64ffda;
+            font-size: 26px; 
+        }
+    }
+}
+.projects--herosection{
+   
+
+    .projects{
+    
+    display: grid;
+    grid-template: auto auto / repeat(3, 1fr);
+    margin-left:110px;
+    margin-right: 110px;
+    position: absolute;
+    left :100%;
+    animation: appear-left 1s ease-out forwards;
+    
+    @include tablet(){
+        grid-template-columns: repeat(2 ,1fr);
+        margin-right: 90px;
+        margin-left: 50px;
+    }
+    @include mobile{
+        grid-template-columns: repeat(1 ,1fr);
+        margin-right: none;
+    }
+  
+    .projects--container{
+    padding: 5px;
+    width: 250px;
+    height: 350px;
+    border:2px solid ;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    background-color:rgb(16, 33, 66);
+    border-radius: 6px ;
+    border: none;
+    
+
+
+    &:hover{
+        height: 351px;
+        width:251px ;
+    }
+
+    h1{
+       text-align: center;
+       font-size: 20px;
+       
+       &:hover{
+        font-size: 22px;
+       }
+
+       a{
+        text-decoration: inherit;
+        color: rgb(206, 202, 202);
+        
+        &:hover{
+            color: #64ffda;
+        }
+       }
+    }
+    
+    .projects--git--icon{
+        text-align: center;
+     
+    }
+       
+        
+    .projects--description{
+        color: #ccd6f6;
+        padding: 6px;
+    }
+    .projects--tech{
+
+        ol{
+            display: inline-flex;
+            gap: 5px;
+            padding-left: 0;
+            color: azure;
+            align-items: center;
+            li{
+                list-style:none;
+                text-align: center;
+                color: #ccd6f6;
+                font-family:'Courier New', Courier, monospace;
+                padding-right: 0;
+                font-size: small;
+                align-items: center;
+            }
+        }
+    }
+}
+
+}
+@keyframes appear-left {
+    100% {
+      left: 0;
+    }
+  }
+}
+
+
+
 .homepage{
     display: flex;
     height: 100vh;
@@ -215,6 +371,7 @@ body{
             
             width: 100%; 
             position: relative;
+            overflow:scroll;
 
             .footer{
                 display: flex;
