@@ -1,6 +1,7 @@
 import React from "react";
 
 const Profile= () =>{
+
     return(
         <div className="my--profile">
             <div className="my--profile--content">
@@ -19,6 +20,7 @@ const Profile= () =>{
                     building accessible, human-centered products at <span className="p5">UpStatement</span><br/>
                 </p>
             </div>
+
         </div>
     )
 }

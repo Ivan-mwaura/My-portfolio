@@ -24,11 +24,14 @@ const SidebarProfile= () =>{
                 onMouseEnter = {()=>{setHoveredIcon("github")}}
                 onMouseLeave = {()=> {setHoveredIcon(null)}}
                 >
+                <a href="https://github.com/Ivan-mwaura">
                 <Github
                     size={30}
                     color = {hoveredIcon === "github" ? "#64ffda" : "white"}
                     className = "icon"
+                
                 />
+                </a>
                 </div>
                 <br/>
                 <br/>
